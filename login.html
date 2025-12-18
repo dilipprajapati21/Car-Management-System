@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carz World - Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; font-family: 'Poppins', sans-serif; }
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(to right, #0a2e63, #0d47a1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container {
+    background: #fff;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    padding: 50px 30px 40px 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  .login-container img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login-container h2 {
+    color: #0d47a1;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-container input {
+    width: 100%;
+    padding-right: 40px;
+  }
+
+  .toggle-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+  }
+
+  .login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #0d47a1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .login-container button:hover {
+    background: #08306b;
+  }
+
+  .login-container a {
+    display: block;
+    margin-top: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #0d47a1;
+    transition: 0.3s;
+  }
+
+  .login-container a:hover {
+    color: #08306b;
+  }
+
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background:white;
+    color:navy;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    z-index: 1000;
+  }
+
+  nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  nav ul {
+    list-style:none;
+    display:flex;
+    gap:20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: navy;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    background: #ffcc00;
+    color: #000;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">🚘 Carz World</div>
+  <ul>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="forgotpass.html">Forgot Password</a></li>
+  </ul>
+</nav>
+
+<!-- Login Container -->
+<div class="login-container">
+  <img src="cardetail1.jpg" alt="Carz World Logo">
+  <h2>Login</h2>
+  <form action="login.php" method="POST">
+    <input type="text" name="username" placeholder="Username or Email" required>
+
+    <div class="password-container">
+      <input type="password" name="password" id="password" placeholder="Password" required>
+      <span class="toggle-eye" onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button type="submit">Login</button>
+    <a href="forgotpass.html">Forgot Password?</a>
+    <a href="register.html">Create an Account</a>
+  </form>
+</div>
+
+<script>
+function togglePassword() {
+  const passField = document.getElementById("password");
+  const eyeIcon = document.querySelector(".toggle-eye");
+  if(passField.type === "password") {
+    passField.type = "text";
+    eyeIcon.textContent = "🙈";
+  } else {
+    passField.type = "password";
+    eyeIcon.textContent = "👁️";
+  }
+}
+</script>
+
+</body>
+</html>

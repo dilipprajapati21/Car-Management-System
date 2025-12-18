@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Cars | Carz World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .navbar {
+      background: navy;
+      color: white;
+      padding: 15px;
+    }
+    .navbar h1 {
+      margin: 0;
+    }
+    .search-box {
+      margin: 40px auto;
+      max-width: 500px;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background: navy;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004080;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <h1>Carz World</h1>
+</div>
+
+<div class="search-box">
+  <h2>🔎 Search Your Dream Car</h2>
+  <form action="search.php" method="GET">
+    <input type="text" name="query" placeholder="Enter car name or model..." required>
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+</body>
+</html>

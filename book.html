@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Now - Carz World</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin:0; padding:0; font-family:'Poppins', sans-serif;}
+body { background:#ECEFF1; color:#212121; }
+
+/* Navbar */
+nav {
+  background:#1A237E;
+  color:#FFC107;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  position:sticky; top:0; z-index:1000;
+}
+nav .logo { font-size:28px; font-weight:700; }
+nav a { color:#FFC107; text-decoration:none; margin-left:30px; font-weight:600; transition:color 0.3s; }
+nav a:hover { color:#EF6C00; }
+
+/* Form Container */
+.container {
+  max-width:700px;
+  margin:60px auto;
+  background:#fff;
+  padding:40px 30px;
+  border-radius:15px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.1);
+}
+h2 { text-align:center; font-size:32px; color:#1A237E; margin-bottom:30px; }
+
+/* Form Elements */
+label { display:block; margin-top:15px; font-weight:600; font-size:16px; color:#333; }
+input, select, textarea { width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:8px; font-size:16px; transition:border-color 0.3s, box-shadow 0.3s; }
+input:focus, select:focus, textarea:focus { border-color:#1A237E; box-shadow:0 0 5px rgba(26,35,126,0.3); outline:none; }
+
+/* Price Display */
+#carPrice {
+  margin-top:10px;
+  font-weight:700;
+  color:#1A237E;
+  font-size:16px;
+}
+
+/* Button */
+button.btn {
+  width:100%;
+  padding:14px;
+  margin-top:25px;
+  background:#1A237E;
+  color:#FFC107;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  transition: background 0.3s, color 0.3s;
+}
+button.btn:hover { background:#FFC107; color:#1A237E; }
+
+/* Responsive */
+@media (max-width:768px){
+  nav{ flex-direction:column; gap:10px; padding:15px 30px;}
+  nav a{ margin-left:0; margin-right:20px; font-size:16px;}
+  .container{ margin:40px 20px; padding:30px 20px;}
+  h2{ font-size:28px; }
+}
+@media (max-width:480px){
+  .container{ margin:30px 15px; padding:25px 15px;}
+  h2{ font-size:24px; }
+  label, input, select, textarea, button{ font-size:14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">🚗 Carz World</div>
+  <div>
+    <a href="home.html">Home</a>
+    <a href="rental-car.html">Rental Service</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<!-- Booking Form -->
+<div class="container">
+  <h2>Book Your Car</h2>
+  <form action="book.php" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+
+    <label for="car">Select Car</label>
+    <select name="car" id="car" required onchange="updatePrice()">
+      <option value="" disabled selected>Select your car</option>
+      <option value="Toyota Corolla" data-price="1500">Toyota Corolla</option>
+      <option value="Mahindra XUV500" data-price="2500">Mahindra XUV500</option>
+      <option value="Maruti Swift" data-price="1200">Maruti Swift</option>
+      <option value="Honda City" data-price="1700">Honda City</option>
+      <option value="Hyundai Creta" data-price="2200">Hyundai Creta</option>
+      <option value="Volkswagen Polo" data-price="1300">Volkswagen Polo</option>
+      <option value="Tata Harrier" data-price="2800">Tata Harrier</option>
+      <option value="Skoda Octavia" data-price="2000">Skoda Octavia</option>
+    </select>
+
+    <div id="carPrice">Price: ₹0 / day</div>
+
+    <label for="date">Booking Date</label>
+    <input type="date" name="date" id="date" required>
+
+    <label for="message">Special Request</label>
+    <textarea name="message" id="message" rows="4" placeholder="Any special requests"></textarea>
+
+    <button type="submit" class="btn">Confirm Booking</button>
+  </form>
+</div>
+
+<script>
+function updatePrice() {
+  const carSelect = document.getElementById('car');
+  const priceDisplay = document.getElementById('carPrice');
+  const selectedOption = carSelect.options[carSelect.selectedIndex];
+  const price = selectedOption.getAttribute('data-price') || 0;
+  priceDisplay.textContent = `Price: ₹${price} / day`;
+}
+</script>
+
+</body>
+</html>

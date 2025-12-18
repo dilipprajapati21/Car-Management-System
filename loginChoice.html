@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Carz World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+    .navbar {
+      background: navy;
+      padding: 15px;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      height: calc(100vh - 70px);
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .box:hover {
+      transform: translateY(-8px);
+    }
+    h2 {
+      color: navy;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 15px;
+      background: navy;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #004080;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Carz World</h1>
+  </div>
+
+  <div class="container">
+    <!-- Admin Login Box -->
+    <div class="box">
+      <h2>Admin Login</h2>
+      <p>Login as Admin to manage cars, bookings, and users.</p>
+      <a href="adminlogin.php" class="btn">Login as Admin</a>
+    </div>
+
+    <!-- User Login Box -->
+    <div class="box">
+      <h2>User Login</h2>
+      <p>Login as User to explore and book your favorite cars.</p>
+      <a href="login.html" class="btn">Login as User</a>
+    </div>
+  </div>
+
+</body>
+</html>

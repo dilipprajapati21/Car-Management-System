@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Now - Carz World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #ECEFF1; color: #212121; }
+
+    /* Navbar */
+    .navbar {
+      background: #1A237E;
+      padding: 20px 50px;
+      color: #FFC107;
+      text-align: center;
+      font-weight: 700;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Container */
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1A237E;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    /* Form Fields */
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #1A237E;
+      box-shadow: 0 0 5px rgba(26,35,126,0.3);
+      outline: none;
+    }
+
+    /* Button */
+    button.btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 25px;
+      background: #1A237E;
+      color: #FFC107;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    button.btn:hover {
+      background: #FFC107;
+      color: #1A237E;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container { margin: 40px 20px; padding: 30px 20px; }
+      h2 { font-size: 28px; }
+      label, input, select, textarea, button { font-size: 15px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { margin: 30px 15px; padding: 25px 15px; }
+      h2 { font-size: 24px; }
+      label, input, select, textarea, button { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">🚗 Carz World - Buy Now</div>
+
+  <!-- Buy Form Container -->
+  <div class="container">
+    <h2>Complete Your Purchase</h2>
+    <form action="buy.php" method="POST">
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="car">Car Model</label>
+      <input type="text" id="car" name="car" placeholder="Selected Car Model" required>
+
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="address" placeholder="Enter your address" rows="4" required></textarea>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" name="payment" required>
+        <option value="" disabled selected>-- Select Payment Method --</option>
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+
+      <button type="submit" class="btn">Confirm Purchase</button>
+    </form>
+  </div>
+
+</body>
+</html>
